@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090914"><title>DRIP CLIENT STORE</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top"><a class="brand" href="/">DRIP<span>CLIENT</span></a><button id="adminOpen" class="admin-link">Admin ↗</button></header>
+<main>
+<section class="hero"><p class="eyebrow">DIGITAL PRODUCT STORE</p><h1>Produk digital,<br><span>lebih mudah.</span></h1><p class="muted">Pilih produk yang kamu butuhkan. Katalog dan harga diperbarui dari Drip API.</p></section>
+<section class="catalog-head"><div><p class="eyebrow">KATALOG</p><h2>Semua Produk</h2></div><button id="refresh" class="outline">Muat ulang</button></section>
+<div id="status" class="status">Memuat katalog produk…</div><section id="products" class="products"></section>
+<section class="payment"><div><p class="eyebrow">PEMBAYARAN</p><h2>Informasi pembayaran</h2><p id="paymentNote" class="muted">Hubungi admin untuk instruksi pembayaran.</p></div><img id="paymentQr" alt="QR pembayaran" hidden></section>
+</main>
+<footer>© <span id="year"></span> DRIP CLIENT STORE</footer>
+<dialog id="adminDialog"><div class="dialog-head"><div><p class="eyebrow">PRIVATE AREA</p><h2>Admin dashboard</h2></div><button class="close" id="closeAdmin">✕</button></div>
+<div id="loginView"><p class="muted">Masuk untuk mengatur API dan pembayaran.</p><label>Username<input id="username" autocomplete="username" value="riski"></label><label>Password<input id="password" type="password" autocomplete="current-password"></label><button id="loginBtn" class="primary full">Login Admin</button></div>
+<div id="dashboard" hidden><p class="success">Login berhasil.</p><div class="panel"><h3>Koneksi Drip API</h3><label>API Key<input id="apiKey" type="password" placeholder="drip_sk_test_… / drip_sk_live_…" autocomplete="off"></label><small>Key dienkripsi di server dan tidak dikirim ke browser publik.</small><button id="saveSettings" class="primary full">Simpan pengaturan</button><button id="accountBtn" class="outline full">Cek akun & saldo</button><pre id="accountInfo"></pre></div><div class="panel"><h3>Pembayaran QR</h3><label>URL gambar QRIS<input id="qrUrl" placeholder="https://…/qris.png"></label><label>Instruksi pembayaran<textarea id="paymentText" rows="3" placeholder="Transfer lalu hubungi admin…"></textarea></label><button id="savePayment" class="primary full">Simpan pembayaran</button></div><button id="logoutBtn" class="outline full">Logout</button></div>
+<p id="adminMsg" class="message" role="status"></p></dialog>
+<script src="/app.js" defer></script>
+</body></html>
